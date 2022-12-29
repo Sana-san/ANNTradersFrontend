@@ -1,0 +1,18 @@
+<div class="">
+  <nav class="navbar-sidebar">
+    <h6>Categories</h6>
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-action">
+        <a routerLink="/home">All Products</a>
+      </li>
+      <li
+        class="list-group-item list-group-item-action"
+        *ngFor="let tempProductCategory of productCategories"
+      >
+        <a routerLink="/category/{{ tempProductCategory.id }}">
+          {{ tempProductCategory.type }}
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

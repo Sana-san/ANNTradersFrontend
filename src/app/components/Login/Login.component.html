@@ -1,0 +1,72 @@
+<div class="modal-body">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-4 m-auto">
+        <form class="form-container">
+          <div class="card mt-2 bg-white">
+            <div class="card-title text-center mt-3">
+              <img
+                src="AvtarNew.png"
+                height="140px"
+                width="140px"
+                class="img-rounded"
+              />
+            </div>
+            <div class="card-body">
+              <form (ngSubmit)="checkLogin()" [formGroup]="form">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fa fa-user fa-1x"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="email"
+                    class="form-control py-2"
+                    id="exampleInputEmail1"
+                    placeholder="Enter your email address"
+                    [(ngModel)]="username"
+                    required
+                    formControlName="username"
+                  />
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fa fa-lock fa-1x"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="password"
+                    class="form-control py-2"
+                    id="exampleInputPassword"
+                    placeholder="Enter your password"
+                    [(ngModel)]="password"
+                    required
+                    formControlName="password"
+                  />
+                </div>
+
+                <button
+                  [disabled]="!form.valid"
+                  type="submit"
+                  class="btn btn-block"
+                  style="background-color: blueviolet; color: #fff"
+                >
+                  Log in</button
+                ><br />
+
+                <p class="float-right mt-2">
+                  New User ?<a routerLink="/register" style="color: blueviolet">
+                    Create Account</a
+                  >
+                </p>
+                <br />
+              </form>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<nav class="navbar navbar-dark navbar-expand-md" style="background-color:blueviolet">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="" >ANN TRADERS</a>
+
+    <button
+      data-toggle="collapse"
+      class="navbar-toggler"
+      data-target="#navcol-1"
+    >
+      <span class="sr-only">Toggle navigation</span
+      ><span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navcol-1">
+      <ul class="nav navbar-nav ml-auto">
+        <li role="presentation" class="nav-item">
+          <a
+            *ngIf="!basicAuth.isUserLoggedIn()"
+            routerLink="/login"
+            class="nav-link"
+          >
+            <i class="fa fa-sign-in" aria-hidden="true"></i> Login</a
+          >
+        </li>
+        <li role="presentation" class="nav-item">
+          <a
+            *ngIf="!basicAuth.isUserLoggedIn()"
+            routerLink="/register"
+            class="nav-link"
+            ><i class="icon"></i>
+
+            <i class="fa fa-user" aria-hidden="true"></i> Register</a
+          >
+        </li>
+
+        <!--Add product link-->
+        <li role="presentation" class="nav-item">
+          <a
+            *ngIf="basicAuth.isUserLoggedIn() && user_role === 'ROLE_USER'"
+            routerLink="/addproduct"
+            class="nav-link"
+          >
+            <i class="fa fa-plus-square" aria-hidden="true"></i> Add Product</a
+          >
+        </li>
+        <li role="presentation" class="nav-item">
+          <a
+            *ngIf="basicAuth.isUserLoggedIn()"
+            routerLink="/signout"
+            class="nav-link"
+            ><i class="icon"></i>
+
+            <i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

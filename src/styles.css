@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+.btn.btn-outline-mycolor {
+  border-color: #00b0ff;
+}
+
+.btn.btn-outline-mycolor:hover {
+  background-color: #00b0ff;
+  color: #fff;
+}

@@ -1,0 +1,71 @@
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="col-lg-2">
+      <div class="filter mt-5">
+        <app-product-category></app-product-category>
+      </div>
+    </div>
+    <div class="col-lg-10">
+      <h3 class="font-weight-bold mb-2">Products Catalog</h3>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="form-inline mx-auto my-2 d-inline" style="width: 300px">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search products"
+                #searchvalue
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-outline-mycolor"
+                  type="button"
+                  (click)="search(searchvalue.value)"
+                >
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row pb-5 mb-4 mt-3">
+        <div
+          class="col-lg-3 col-md-6 mb-4 mb-lg-0"
+          *ngFor="let prop of products"
+        >
+          <!-- Card-->
+          <div class="card rounded shadow-sm border-0">
+            <div class="card-body p-4">
+              <img
+                src="{{ prop.imageUrl }}"
+                alt=""
+                class="img-fluid d-block mx-auto mb-3"
+              />
+              <h5>
+                <a href="#" class="text-dark">{{ prop.name }}</a>
+              </h5>
+              <p class="small text-muted font-italic">
+                {{ prop.description | slice: 0:25 }}
+              </p>
+              <p class="small text-muted font-italic">
+                Price : {{ prop.price | currency: "INR" }}
+              </p>
+
+              <a href="product/{{ prop.id }}" class="btn btn-outline-mycolor"
+                >See more</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 mx-auto mt-4" *ngIf="products.length == 0">
+          <div class="alert alert-dark" role="alert">
+            <h3 class="alert-heading">Sorry!!</h3>
+            <p>No Products to be found!!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
