@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import swal from 'sweetalert2';
 import { MustMatch } from './confirm-equal-validator';
 
-const baseUrl = 'http://productserviceloadbalancer-2101711574.ap-south-1.elb.amazonaws.com/user/register';
+const baseUrl = 'http://ann-product-service-alb-793440343.ap-south-1.elb.amazonaws.com/user/register';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
